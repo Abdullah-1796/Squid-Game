@@ -23,7 +23,7 @@ public class LightManager : MonoBehaviour
 
         if(time >= greenLightTime - 3)
         {
-            alert.text = ((int)(greenLightTime - time)).ToString();
+            alert.text = ((int)(greenLightTime - time) + 1).ToString();
         }
 
         if(time >= greenLightTime && greenLight)
