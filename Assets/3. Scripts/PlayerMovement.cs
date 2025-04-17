@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 2.0f;
     [SerializeField] private float acceleration = 10.0f;
     [SerializeField] private float jumpForce = 10.0f;
+    [SerializeField] private float rotationSpeed = 5.0f;
 
     //script variables
     private Rigidbody rb;
@@ -32,10 +33,12 @@ public class PlayerMovement : MonoBehaviour
         Vector2 move = movement.action.ReadValue<Vector2>();
 
         //generating velocity
-        Vector3 velocity = new Vector3(move.x, 0, move.y) * moveSpeed * Time.fixedDeltaTime * acceleration;
+        Vector3 velocity = move.y * transform.forward * moveSpeed * Time.fixedDeltaTime * acceleration;
 
         //adding force
         rb.AddForce(velocity, ForceMode.Impulse);
+        //rotation
+        transform.Rotate(Vector3.up * move.x * rotationSpeed * Time.fixedDeltaTime);
 
         //limiting force to maxSpeed from increasing with time
         Vector3 newVelocity = rb.linearVelocity;
