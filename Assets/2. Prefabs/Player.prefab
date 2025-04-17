@@ -154,4 +154,5 @@ MonoBehaviour:
   maxSpeed: 2
   moveSpeed: 2
   acceleration: 10
-  jumpForce: 10
+  jumpForce: 6
+  rotationSpeed: 40
