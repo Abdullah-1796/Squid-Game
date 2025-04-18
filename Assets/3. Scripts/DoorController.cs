@@ -1,9 +1,12 @@
+using System.Threading;
 using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
     [SerializeField] private GameObject door;
     private Animator doorAnimator;
+    private bool open = false;
+    private bool closable = false;
 
     void Start()
     {
@@ -12,17 +15,37 @@ public class DoorController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        doorAnimator.SetTrigger("Open");
+        doorAnimator.SetBool("locked", false);
+        if (other.GetType() == typeof(BoxCollider) && !open)
+        {
+            doorAnimator.SetBool("boxCollided", true);
+            open = true;
+        }
+        else if(!open)
+        {
+            doorAnimator.SetBool("capsuleCollided", true);
+            open = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        doorAnimator.SetTrigger("Close");
+        if (closable)
+        {
+            doorAnimator.SetBool("boxCollided", false);
+            doorAnimator.SetBool("capsuleCollided", false);
+            Invoke("setLocked", 2f);
+            closable = false;
+        }
+        else
+        {
+            closable = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void setLocked()
     {
-        
+        doorAnimator.SetBool("locked", true);
+        open = false;
     }
 }
