@@ -3,38 +3,41 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    [SerializeField] private GameObject door;
     private Animator doorAnimator;
     private bool open = false;
     private bool closable = false;
 
-    void Start()
-    {
-        doorAnimator = door.GetComponent<Animator>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        doorAnimator.SetBool("locked", false);
-        if (other.GetType() == typeof(BoxCollider) && !open)
+        if (other.gameObject.CompareTag("Door"))
         {
-            doorAnimator.SetBool("boxCollided", true);
-            open = true;
-        }
-        else if(!open)
-        {
-            doorAnimator.SetBool("capsuleCollided", true);
-            open = true;
+            DoorModelReference doorModelReference = other.gameObject.GetComponent<DoorModelReference>();
+            doorAnimator = doorModelReference.GetAnimator();
+            if (other.GetType() == typeof(BoxCollider) && !open)
+            {
+                doorAnimator.SetBool("locked", false);
+                Debug.Log("Box collider");
+                doorAnimator.SetBool("boxCollided", true);
+                open = true;
+            }
+            else if (!open)
+            {
+                doorAnimator.SetBool("locked", false);
+                Debug.Log("Capsule collider");
+                doorAnimator.SetBool("capsuleCollided", true);
+                open = true;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (closable)
+        if (closable && open)
         {
             doorAnimator.SetBool("boxCollided", false);
             doorAnimator.SetBool("capsuleCollided", false);
-            Invoke("setLocked", 2f);
+            Invoke("setLocked", 1f);
             closable = false;
         }
         else
