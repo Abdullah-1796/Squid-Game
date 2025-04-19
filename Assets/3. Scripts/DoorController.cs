@@ -1,4 +1,3 @@
-using System.Threading;
 using UnityEngine;
 
 public class DoorController : MonoBehaviour
@@ -17,14 +16,12 @@ public class DoorController : MonoBehaviour
             if (other.GetType() == typeof(BoxCollider) && !open)
             {
                 doorAnimator.SetBool("locked", false);
-                Debug.Log("Box collider");
                 doorAnimator.SetBool("boxCollided", true);
                 open = true;
             }
             else if (!open)
             {
                 doorAnimator.SetBool("locked", false);
-                Debug.Log("Capsule collider");
                 doorAnimator.SetBool("capsuleCollided", true);
                 open = true;
             }
