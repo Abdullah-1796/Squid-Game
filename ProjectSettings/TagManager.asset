@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Endpoint
   - Door
+  - DoorFrontSide
+  - DoorBackSide
   layers:
   - Default
   - TransparentFX

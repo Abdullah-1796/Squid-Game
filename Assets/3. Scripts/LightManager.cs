@@ -42,7 +42,7 @@ public class LightManager : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         if(!greenLight)
         {
