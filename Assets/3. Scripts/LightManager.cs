@@ -12,7 +12,7 @@ public class LightManager : MonoBehaviour
     [SerializeField] private TMP_Text alert;
 
     //script variables
-    private bool greenLight = true;
+    [HideInInspector] public bool greenLight = true;
     private float time = 0;
     private Vector3 oldPos;
 
