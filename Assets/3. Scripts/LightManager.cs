@@ -40,13 +40,10 @@ public class LightManager : MonoBehaviour
             greenLight = true;
             alert.text = string.Empty;
         }
-    }
 
-    private void LateUpdate()
-    {
-        if(!greenLight)
+        if (!greenLight)
         {
-            if(oldPos != player.transform.position)
+            if (oldPos.z + 0.5f < player.transform.position.z)
             {
                 alert.text = "Game Over";
                 Time.timeScale = 0;
