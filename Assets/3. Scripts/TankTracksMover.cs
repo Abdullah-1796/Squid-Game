@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TankTracksMover : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class TankTracksMover : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private Material leftTread;
     [SerializeField] private Material rightTread;
+    [SerializeField] private InputActionReference move;
     private float leftTreadYOffsetPos = 0f;
     private float rightTreadYOffsetPos = 0f;
 
@@ -16,23 +18,25 @@ public class TankTracksMover : MonoBehaviour
 
         int leftTreadDir = 0;
         int rightTreadDir = 0;
+        Vector2 tankMovement = move.action.ReadValue<Vector2>();
+        Debug.Log(tankMovement);
 
-        if (Input.GetKey(KeyCode.W))
+        if (tankMovement.y > 0)
         {
             leftTreadDir = -1;
             rightTreadDir = -1;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (tankMovement.y < 0)
         {
             leftTreadDir = 1;
             rightTreadDir = 1;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (tankMovement.x < 0)
         {
             leftTreadDir = 1;
             rightTreadDir = -1;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (tankMovement.x > 0)
         {
             leftTreadDir = -1;
             rightTreadDir = 1;

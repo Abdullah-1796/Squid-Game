@@ -165,7 +165,7 @@
                     "name": "Turret Movement",
                     "type": "Value",
                     "id": "661d93f0-37d5-486f-a7b2-cee51ea926b6",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -284,8 +284,8 @@
                 },
                 {
                     "name": "Keyboard",
-                    "id": "be8bd3d4-a46c-4da0-8720-6c870a0d76e6",
-                    "path": "1DAxis",
+                    "id": "bcd4ae99-0a8a-44a7-b5b3-61072b25b95a",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -294,8 +294,30 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Negative",
-                    "id": "673e0f79-c8f3-4d81-b022-e97ea08e03f5",
+                    "name": "up",
+                    "id": "48f98d3d-4ad3-4185-9d33-f866c186edef",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turret Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "546816ab-e71e-4f9a-a021-b6ee3b9c6ccb",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turret Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "4c297344-7b34-4df2-b12d-49d183de54ed",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -305,42 +327,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Positive",
-                    "id": "bbe3401c-146e-4c2f-86bd-0e381b9e17c9",
+                    "name": "right",
+                    "id": "95456301-b0c5-4e68-8758-0dbd13ab16e5",
                     "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Turret Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Gamepad",
-                    "id": "d81c987c-4e9b-4a2e-aa1d-eaf128e5861a",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Turret Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "ea538b32-53af-4587-a4f6-198d990e7e42",
-                    "path": "<Gamepad>/rightStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Turret Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "467b8e11-c2b4-4605-8ed0-8c4f19f8f66d",
-                    "path": "<Gamepad>/rightStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

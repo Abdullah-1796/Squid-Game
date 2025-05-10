@@ -1052,8 +1052,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: b27a74c7df6d4f642b0b3245957d92a1, type: 2}
     - target: {fileID: -8679921383154817045, guid: 18498d87574024f49b5bc8fedc9336e8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 18498d87574024f49b5bc8fedc9336e8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 18498d87574024f49b5bc8fedc9336e8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 18498d87574024f49b5bc8fedc9336e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 484.42
+      value: -52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 18498d87574024f49b5bc8fedc9336e8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1061,7 +1073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 18498d87574024f49b5bc8fedc9336e8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.8
+      value: -65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 18498d87574024f49b5bc8fedc9336e8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1090,6 +1102,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 18498d87574024f49b5bc8fedc9336e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 18498d87574024f49b5bc8fedc9336e8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7364947641531454822, guid: 18498d87574024f49b5bc8fedc9336e8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1656,7 +1672,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 88
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &5020958559580639355
 MonoBehaviour:
@@ -1714,6 +1730,9 @@ MonoBehaviour:
     wheelMesh: {fileID: 3176731534609669324}
   - wheelCollider: {fileID: 1175275767045532003}
     wheelMesh: {fileID: 1152204507537055305}
+  move: {fileID: 6844903493762849985, guid: e0bb7a115d89b08488ce6ba4277906d0, type: 3}
+  maxTorque: 1500
+  maxRotation: 2.5
 --- !u!114 &-2281764606779590647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1726,11 +1745,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4805dd575f914f94aa5a96b5c64464b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: {fileID: 0}
-  turretMove: {fileID: 0}
-  maxSpeed: 3
-  moveSpeed: 2
-  acceleration: 10
+  move: {fileID: 6844903493762849985, guid: e0bb7a115d89b08488ce6ba4277906d0, type: 3}
+  turretMove: {fileID: -1543889097391222512, guid: e0bb7a115d89b08488ce6ba4277906d0, type: 3}
+  maxSpeed: 5
+  moveSpeed: 3
+  acceleration: 600
   rotationSpeed: 5
 --- !u!1 &8132327350351969195 stripped
 GameObject:

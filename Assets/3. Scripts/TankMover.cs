@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 public class TankMover : MonoBehaviour
 {
     [SerializeField] private InputActionReference move;
-    [SerializeField] private InputActionReference turretMove;
 
     //values
     [SerializeField] private float maxSpeed = 3.0f;
@@ -26,14 +25,13 @@ public class TankMover : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 tankMovement = move.action.ReadValue<Vector2>();
-        Axis turretMovement = turretMove.action.ReadValue<Axis>();
 
 
         //generating velocity
-        Vector3 velocity = tankMovement.y * transform.forward * moveSpeed * Time.fixedDeltaTime * acceleration;
+        Vector3 velocity = tankMovement.y * transform.forward * moveSpeed * acceleration * Time.fixedDeltaTime;
 
         //adding force
-        rb.AddForce(velocity, ForceMode.VelocityChange);
+        rb.AddForce(velocity, ForceMode.Impulse);
         //rotation
         transform.Rotate(Vector3.up * tankMovement.x * rotationSpeed * Time.fixedDeltaTime);
 
@@ -41,6 +39,6 @@ public class TankMover : MonoBehaviour
         Vector3 newVelocity = rb.linearVelocity;
         Vector3 limitVelocity = Vector3.ClampMagnitude(new Vector3(newVelocity.x, 0f, newVelocity.z), maxSpeed);
         rb.linearVelocity = new Vector3(limitVelocity.x, newVelocity.y, limitVelocity.z);
-        //Debug.Log(rb.linearVelocity.x + " , " + rb.linearVelocity.z);
+        //Debug.Log(velocity + " , " + rb.linearVelocity.z);
     }
 }
