@@ -16,6 +16,7 @@ public class TankWheelController : MonoBehaviour
     [SerializeField] private float maxTorque = 1500;
     [SerializeField] private float maxRotation = 2.5f;
     [SerializeField] private float brakeTorque = 10000f;
+    private bool brake = false;
 
     private void FixedUpdate()
     {
@@ -28,7 +29,7 @@ public class TankWheelController : MonoBehaviour
 
         for (int i = 0; i < wheels.Length; i++)
         {
-            if (tankMovement.y != 0)
+            if (!brake)
             {
                 wheels[i].wheelCollider.brakeTorque = 0;
                 if (i % 2 == 0)
@@ -44,6 +45,15 @@ public class TankWheelController : MonoBehaviour
             {
                 wheels[i].wheelCollider.brakeTorque = brakeTorque;
             }
+        }
+
+        if (Input.GetKey(KeyCode.B))
+        {
+            brake = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.B))
+        {
+            brake = false;
         }
     }
 

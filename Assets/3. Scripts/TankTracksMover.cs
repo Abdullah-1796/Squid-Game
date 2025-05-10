@@ -19,7 +19,7 @@ public class TankTracksMover : MonoBehaviour
         int leftTreadDir = 0;
         int rightTreadDir = 0;
         Vector2 tankMovement = move.action.ReadValue<Vector2>();
-        Debug.Log(tankMovement);
+        //Debug.Log(tankMovement);
 
         if (tankMovement.y > 0)
         {

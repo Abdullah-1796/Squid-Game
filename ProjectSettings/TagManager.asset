@@ -9,6 +9,11 @@ TagManager:
   - Door
   - DoorFrontSide
   - DoorBackSide
+  - FxTemporaire
+  - Tank
+  - Cannon
+  - Tank Missile
+  - Cannon Bullet
   layers:
   - Default
   - TransparentFX
