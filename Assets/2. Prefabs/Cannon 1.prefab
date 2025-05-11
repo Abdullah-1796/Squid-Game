@@ -3764,9 +3764,11 @@ GameObject:
   - component: {fileID: 5417049133794537673}
   - component: {fileID: 6886390411422425399}
   - component: {fileID: 6032924356808084859}
+  - component: {fileID: 2733519683418805088}
+  - component: {fileID: 4912628718221224171}
   m_Layer: 0
   m_Name: Cannon 1
-  m_TagString: Untagged
+  m_TagString: Cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3861,6 +3863,44 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!136 &2733519683418805088
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3630386252492407193}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 449.1197
+  m_Height: 898.23944
+  m_Direction: 1
+  m_Center: {x: -0.00000011519438, y: 287.83136, z: 55.322792}
+--- !u!114 &4912628718221224171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3630386252492407193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddbd247ddafd05439046acba2154c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionOnDamage: {fileID: 100012, guid: 3364c97de68d3a147af572d1c71c6455, type: 3}
+  health: 20
+  damageOnCollision: 10
 --- !u!1 &3818971145562840276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,11 +5041,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5da8c72e03f1245824108b0d162736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDownTime: 5
+  coolDownTime: 4
   bulletPos: {fileID: 8915922230547985769}
   bullet: {fileID: 1674989291971700674, guid: 2db9aa7ec93940b47bf9c3d7f846a6a3, type: 3}
   rayLength: 40
-  rotationSpeed: 5
+  rotationSpeed: 10
 --- !u!1 &5519220688704514920
 GameObject:
   m_ObjectHideFlags: 0
@@ -5674,7 +5714,7 @@ Transform:
   m_GameObject: {fileID: 6814276080270254912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18436818, y: 290.38232, z: 422.04514}
+  m_LocalPosition: {x: -0, y: 290.38232, z: 498}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
