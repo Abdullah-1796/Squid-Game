@@ -5,6 +5,12 @@ public class DoorController : MonoBehaviour
     private Animator doorAnimator;
     private bool open = false;
     private int colliderCount = 0;
+    private AudioSource[] doorAudio;
+
+    private void Start()
+    {
+        doorAudio = GetComponents<AudioSource>();
+    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -16,6 +22,7 @@ public class DoorController : MonoBehaviour
             doorAnimator.SetBool("locked", false);
             doorAnimator.SetBool("boxCollided", true);
             open = true;
+            doorAudio[0].Play();
         }
         else if (other.gameObject.CompareTag("DoorBackSide") && !open)
         {
@@ -24,6 +31,7 @@ public class DoorController : MonoBehaviour
             doorAnimator.SetBool("locked", false);
             doorAnimator.SetBool("capsuleCollided", true);
             open = true;
+            doorAudio[0].Play();
         }
 
         if(other.gameObject.CompareTag("DoorFrontSide") || other.gameObject.CompareTag("DoorBackSide"))
@@ -45,6 +53,7 @@ public class DoorController : MonoBehaviour
 
     void setLocked()
     {
+        doorAudio[1].Play();
         doorAnimator.SetBool("locked", true);
         open = false;
     }

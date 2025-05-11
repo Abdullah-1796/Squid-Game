@@ -4,10 +4,12 @@ public class CannonCounter : MonoBehaviour
 {
     [SerializeField] private int cannonCount = 5;
     [SerializeField] private GameObject levelManager;
+    private AudioSource cannonExplosionAudio;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        cannonExplosionAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class CannonCounter : MonoBehaviour
 
     public void DecreaseCount()
     {
+        cannonExplosionAudio.Play();
         cannonCount--;
     }
 }

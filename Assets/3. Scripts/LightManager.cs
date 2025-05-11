@@ -9,6 +9,7 @@ public class LightManager : MonoBehaviour
     [SerializeField] private float redLightTime = 2.0f;
     [SerializeField] private GameObject levelManager;
 
+
     //canvas references
     [SerializeField] private TMP_Text alert;
 
@@ -16,8 +17,14 @@ public class LightManager : MonoBehaviour
     [HideInInspector] public bool greenLight = true;
     private float time = 0;
     private Vector3 oldPos;
+    private AudioSource audioSource;
 
-    
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
+    }
+
     void Update()
     {
         time += Time.deltaTime;
@@ -40,6 +47,7 @@ public class LightManager : MonoBehaviour
             time = 0;
             greenLight = true;
             alert.text = string.Empty;
+            audioSource.Play();
         }
 
         if (!greenLight)
