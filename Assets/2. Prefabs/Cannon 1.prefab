@@ -5044,7 +5044,7 @@ MonoBehaviour:
   coolDownTime: 4
   bulletPos: {fileID: 8915922230547985769}
   bullet: {fileID: 1674989291971700674, guid: 2db9aa7ec93940b47bf9c3d7f846a6a3, type: 3}
-  rayLength: 40
+  rayLength: 60
   rotationSpeed: 10
 --- !u!1 &5519220688704514920
 GameObject:

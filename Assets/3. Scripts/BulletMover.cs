@@ -13,7 +13,7 @@ public class BulletMover : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Tank") || collision.gameObject.CompareTag("body"))
+        if (collision.gameObject.CompareTag("Tank") || collision.gameObject.name == "body")
         {
             Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
