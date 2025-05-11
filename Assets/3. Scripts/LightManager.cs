@@ -7,6 +7,7 @@ public class LightManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private float greenLightTime = 5.0f;
     [SerializeField] private float redLightTime = 2.0f;
+    [SerializeField] private GameObject levelManager;
 
     //canvas references
     [SerializeField] private TMP_Text alert;
@@ -46,7 +47,7 @@ public class LightManager : MonoBehaviour
             if (oldPos.z + 0.5f < player.transform.position.z)
             {
                 alert.text = "Game Over";
-                Time.timeScale = 0;
+                levelManager.GetComponent<LevelManager>().gameOver = true;
             }
         }
     }

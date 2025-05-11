@@ -21,6 +21,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float m_jumpForce = 4;
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference jump;
+    [SerializeField] private GameObject levelManager;
 
     [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
 
@@ -240,9 +241,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Endpoint"))
         {
-            Time.timeScale = 0;
             Debug.Log("Level Accomplished!");
             //move to next level
+            levelManager.GetComponent<LevelManager>().levelCompleted = true;
         }
     }
 }

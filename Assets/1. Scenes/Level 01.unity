@@ -4750,6 +4750,7 @@ MonoBehaviour:
   player: {fileID: 1838413712}
   greenLightTime: 5
   redLightTime: 2
+  levelManager: {fileID: 1801578782}
   alert: {fileID: 1622083580}
   greenLight: 1
 --- !u!4 &584996271
@@ -14448,6 +14449,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 489772, guid: ffa0c2f77b5ec7042bf0d4f5280ea1fe, type: 3}
   m_PrefabInstance: {fileID: 25106025}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1801578782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5810042256794850124, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+  m_PrefabInstance: {fileID: 4328403510270357040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1805392321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2625952173410231607, guid: cbf47b70bd6ac6645b3d0a0a21175184, type: 3}
@@ -17126,6 +17132,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 758183e9a1c7aac4daf98a8fa2fbdec4, type: 3}
+--- !u!1001 &4328403510270357040
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5810042256794850124, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_Name
+      value: Level Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098757130079858929, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 104.224815
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098757130079858929, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.272592
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098757130079858929, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 71.74988
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098757130079858929, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098757130079858929, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098757130079858929, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098757130079858929, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098757130079858929, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098757130079858929, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098757130079858929, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16ac75111fb60d041ae072a39f1cc7b4, type: 3}
 --- !u!1001 &4544892705786662718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17424,6 +17487,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Humanoid Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5610668210966179324, guid: 4ce157b35e85453419013585e8f4c5d3, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1801578782}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17451,3 +17518,4 @@ SceneRoots:
   - {fileID: 944564054}
   - {fileID: 574404577}
   - {fileID: 1146377564}
+  - {fileID: 4328403510270357040}

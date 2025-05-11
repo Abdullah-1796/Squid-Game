@@ -3,6 +3,9 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] private GameObject explosionOnDamage;
+    [SerializeField] private GameObject cannonCounter;
+    [SerializeField] private GameObject levelManager;
+
     public float health = 100;
     public float damageOnCollision = 10;
 
@@ -18,6 +21,7 @@ public class HealthManager : MonoBehaviour
                 Instantiate(explosionOnDamage, gameObject.transform.position, Quaternion.identity);
                 Instantiate(explosionOnDamage, gameObject.transform.position, Quaternion.identity);
                 Debug.Log("Game Over");
+                levelManager.GetComponent<LevelManager>().gameOver = true;
             }
         }
     }
@@ -32,6 +36,7 @@ public class HealthManager : MonoBehaviour
                 Instantiate(explosionOnDamage, gameObject.transform.position, Quaternion.identity);
                 Instantiate(explosionOnDamage, gameObject.transform.position, Quaternion.identity);
                 Destroy(gameObject);
+                cannonCounter.GetComponent<CannonCounter>().DecreaseCount();
             }
         }
     }
