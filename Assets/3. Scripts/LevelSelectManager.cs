@@ -30,16 +30,16 @@ public class LevelSelectManager : MonoBehaviour
     {
         // Check if each level is unlocked and enable/disable buttons
         level1Button.interactable = true;  // Level 1 is always unlocked
-        level2Button.interactable = PlayerPrefs.GetInt("Level2", 0) == 1;
-        level3Button.interactable = PlayerPrefs.GetInt("Level3", 0) == 1;
-        level4Button.interactable = PlayerPrefs.GetInt("Level4", 0) == 1;
-        level5Button.interactable = PlayerPrefs.GetInt("Level5", 0) == 1;
-        level6Button.interactable = PlayerPrefs.GetInt("Level6", 0) == 1;
+        level2Button.interactable = PlayerPrefs.GetInt("Level 02", 0) == 1;
+        level3Button.interactable = PlayerPrefs.GetInt("Level 03", 0) == 1;
+        level4Button.interactable = PlayerPrefs.GetInt("Level 04", 0) == 1;
+        level5Button.interactable = PlayerPrefs.GetInt("Level 05", 0) == 1;
+        level6Button.interactable = PlayerPrefs.GetInt("Level 06", 0) == 1;
     }
 
     // Load the level when a button is clicked
     void LoadLevel(int level)
     {
-        SceneManager.LoadScene("Level" + level);  // Make sure your scenes are named Level1, Level2, etc.
+        SceneManager.LoadScene("Level 0" + level);  // Make sure your scenes are named Level1, Level2, etc.
     }
 }

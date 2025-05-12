@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1. Scenes/Level 06.unity
     guid: 56842d8373f91354fa0a9b80449e157d
+  - enabled: 1
+    path: Assets/1. Scenes/Landing Page.unity
+    guid: 4c6ae6b7eee3c7247828d4fc52e9142c
+  - enabled: 1
+    path: Assets/1. Scenes/LevelManager.unity
+    guid: 1f2572c2c869d7742afc19369c514209
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: e0bb7a115d89b08488ce6ba4277906d0, type: 3}
   m_UseUCBPForAssetBundles: 0

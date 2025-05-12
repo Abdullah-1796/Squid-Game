@@ -5,6 +5,6 @@ public class LandingPage : MonoBehaviour
 {
     public void GoToLevelSelect()
     {
-        SceneManager.LoadScene("LevelSelect");  // or your scene name
+        SceneManager.LoadScene("LevelManager");  // or your scene name
     }
 }
