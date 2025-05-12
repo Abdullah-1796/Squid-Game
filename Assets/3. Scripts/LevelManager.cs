@@ -1,9 +1,12 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private float levelDurationInSeconds = 300;
+    [SerializeField] private int levelDurationInSeconds = 300;
+    [SerializeField] private TMP_Text timerText;
+    [SerializeField] private TMP_Text text;
     public string nextLevelName = "Level 02";
     public bool gameOver = false;
     public bool levelCompleted = false;
@@ -30,16 +33,23 @@ public class LevelManager : MonoBehaviour
         {
             LoadNextLevel();
         }
+
+        int timeLeft = levelDurationInSeconds - (int)time;
+        timerText.text =  timeLeft / 60 + " : " + timeLeft % 60;
     }
 
     private void GameOver()
     {
+        text.text = "Game Over";
         Time.timeScale = 0;
     }
 
     private void LoadNextLevel()
     {
+        text.text = "Level Accomplished";
         if (nextLevelName != "Last")
             SceneManager.LoadScene(nextLevelName);
+        else
+            Time.timeScale = 0;
     }
 }

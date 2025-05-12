@@ -54,7 +54,7 @@ public class LightManager : MonoBehaviour
         {
             if (oldPos.z + 0.5f < player.transform.position.z)
             {
-                alert.text = "Game Over";
+                //alert.text = "Game Over";
                 levelManager.GetComponent<LevelManager>().gameOver = true;
             }
         }
